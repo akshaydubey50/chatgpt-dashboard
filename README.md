@@ -15,3 +15,8 @@ Commit: Initial project setup with dependencies
 - Configure component structure for web view
 - Add necessary styling and layout handlers
 
+
+4 Dashboard Mobile view and desktop view both completed
+ - Breakdown the component base on layout
+ 
+
