@@ -4,16 +4,22 @@ import { useAuth0 } from "@auth0/auth0-react";
 const LoginPage = () => {
   const { loginWithRedirect } = useAuth0();
 
+  const auth0Domain = import.meta.env.VITE_AUTH0_DOMAIN;
+  const auth0ClientId = import.meta.env.VITE_AUTH0_CLIENT_ID;
+
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
+      <pre>      {JSON.stringify(auth0ClientId)}
+      </pre>
+      <pre>      {JSON.stringify( auth0Domain)}
+      </pre>
       <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-          <button
-            onClick={() => loginWithRedirect()}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-          >
-            Login with Auth0
-          </button>
-
+        <button
+          onClick={() => loginWithRedirect()}
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+        >
+          Login with Auth0
+        </button>
       </div>
     </div>
   );
