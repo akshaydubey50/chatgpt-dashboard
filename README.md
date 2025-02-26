@@ -21,3 +21,5 @@ Commit: Initial project setup with dependencies
  
 5 Add Auth0 credentials to the .env file and configure colors using the Tailwind config file.
 
+6. Add Not found Page & In Auth0 Dashboard added for local & prod url
+
