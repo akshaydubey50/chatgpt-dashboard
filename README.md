@@ -19,4 +19,5 @@ Commit: Initial project setup with dependencies
 4 Dashboard Mobile view and desktop view both completed
  - Breakdown the component base on layout
  
+5 Add Auth0 credentials to the .env file and configure colors using the Tailwind config file.
 

@@ -89,7 +89,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
         <div className="w-full max-w-4xl px-4 lg:relative lg:mt-8 absolute bottom-4 sm:bottom-2 md:bottom-4">
           <textarea
-            className="bg-[#303030] rounded-2xl lg:rounded-3xl resize-none outline-none px-4 py-4 w-full mb-8"
+            className="bg-[#303030] rounded-2xl lg:rounded-3xl resize-none outline-none px-4 py-4 w-full mb-4"
             rows={4}
             placeholder="Ask Anything"
             aria-label="Ask a question"
@@ -136,64 +136,61 @@ export const ChatgptModelList: React.FC = () => {
 
   return (
     <div className="flex space-x-4 relative text-white cursor-pointer">
-      <button
-        onClick={toggleDropdown}
-        className="hover:bg-[#2f2f2f] hover:rounded-xl cursor-pointer px-3 p-2 flex space-x-2 items-center transition-colors"
-        aria-expanded={showChatGptList}
-        aria-haspopup="true"
-      >
-        <span>ChatGPT</span>
-        <ChevronDownIcon size={16} />
-      </button>
-
-      {showChatGptList && (
-        <div className="absolute w-80 top-12 lg:-left-2 -left-16 z-50">
-          <Card className="bg-[#3A3A3A] text-white p-2 rounded-xl border-[#3A3A3A] shadow-lg">
-            <CardContent className="space-y-4 px-0">
-              <div className="flex items-center justify-between px-4 py-2 rounded-lg cursor-pointer hover:bg-[#454545] transition-colors">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="text-yellow-400" size={18} />
-                  <div>
-                    <p className="text-sm font-semibold">ChatGPT Plus</p>
-                    <p className="text-xs text-gray-400">
-                      Our smartest model & more
-                    </p>
-                  </div>
+    <button
+      onClick={toggleDropdown}
+      className="hover:bg-secondary hover:rounded-xl cursor-pointer px-3 p-2 flex space-x-2 items-center transition-colors"
+      aria-expanded={showChatGptList}
+      aria-haspopup="true"
+    >
+      <span>ChatGPT</span>
+      <ChevronDownIcon size={16} />
+    </button>
+  
+    {showChatGptList && (
+      <div className="absolute w-80 top-12 lg:-left-2 -left-16 z-50">
+        <Card className="bg-accent text-white p-2 rounded-xl border-accent shadow-lg">
+          <CardContent className="space-y-4 px-0">
+            <div className="flex items-center justify-between px-4 py-2 rounded-lg cursor-pointer hover:bg-border transition-colors">
+              <div className="flex items-center gap-2">
+                <Sparkles className="text-yellow-400" size={18} />
+                <div>
+                  <p className="text-sm font-semibold">ChatGPT Plus</p>
+                  <p className="text-xs text-gray-400">
+                    Our smartest model & more
+                  </p>
                 </div>
-                <Button
-                  size="sm"
-                  className="text-white border-gray-600 px-3 py-1 hover:bg-[#555555] transition-colors"
-                >
-                  Upgrade
-                </Button>
               </div>
-
-              <div className="flex items-center justify-between px-2 py-1 lg:px-4 lg:py-2 rounded-lg cursor-pointer hover:bg-[#454545] transition-colors">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="text-green-500" size={18} />
-                  <div>
-                    <p className="text-sm font-semibold">ChatGPT</p>
-                    <p className="text-xs text-gray-400">
-                      Great for everyday tasks
-                    </p>
-                  </div>
+              <Button
+                size="sm"
+                className="text-white border-gray-600 px-3 py-1 hover:bg-[#555555] transition-colors"
+              >
+                Upgrade
+              </Button>
+            </div>
+  
+            <div className="flex items-center justify-between px-2 py-1 lg:px-4 lg:py-2 rounded-lg cursor-pointer hover:bg-border transition-colors">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="text-green-500" size={18} />
+                <div>
+                  <p className="text-sm font-semibold">ChatGPT</p>
+                  <p className="text-xs text-gray-400">
+                    Great for everyday tasks
+                  </p>
                 </div>
-                <input
-                  type="radio"
-                  checked
-                  readOnly
-                  className="accent-blue-500"
-                />
               </div>
-
-              <div className="flex items-center justify-between px-4 py-2 rounded-lg hover:bg-[#454545] cursor-pointer border-t border-gray-700 pt-2 transition-colors">
-                <p className="text-sm font-semibold">Temporary chat</p>
-                <Switch />
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      )}
-    </div>
+              <input type="radio" checked readOnly className="accent-blue-500" />
+            </div>
+  
+            <div className="flex items-center justify-between px-4 py-2 rounded-lg hover:bg-border cursor-pointer border-t border-gray-700 pt-2 transition-colors">
+              <p className="text-sm font-semibold">Temporary chat</p>
+              <Switch />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    )}
+  </div>
+  
+  
   );
 };
