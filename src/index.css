@@ -66,3 +66,24 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;  
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #676767; 
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #171717; 
+  }
+
+  .custom-scrollbar {
+    max-height: 80vh; 
+    overflow-y: auto;
+  }
+}
+
