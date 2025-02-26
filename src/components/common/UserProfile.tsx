@@ -51,6 +51,7 @@ const menuItems: MenuSection[] = [
     ],
   },
 ];
+const ENV_LOGOUT_URL=import.meta.env.VITE_AUTH0_LOGOUT_REDIRECT_URI;
 
 const UserProfileDropdownMenu: React.FC = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -59,7 +60,7 @@ const UserProfileDropdownMenu: React.FC = () => {
 
   const handleClick = (item: MenuItem) => {
     if (item.label === "Log out") {
-      logout({ returnTo: window.location.origin });
+      logout({ returnTo: ENV_LOGOUT_URL });
     } else {
       console.log(`Clicked on ${item.label}`);
     }
