@@ -11,8 +11,11 @@ createRoot(document.getElementById('root')!).render(
     domain={auth0Domain}
     clientId={auth0ClientId}
     authorizationParams={{
-      redirect_uri: window.location.origin
+      redirect_uri: window.location.origin,
+      useRefreshTokens: true, // Enables silent authentication
+      cacheLocation: "localstorage", // Stores tokens across refreshes
     }}
+    
   >
     <App />
   </Auth0Provider>,
